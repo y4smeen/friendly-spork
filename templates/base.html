@@ -79,10 +79,16 @@
                         <ul class="list-inline intro-social-buttons">
                             <li>
                                 <!-- <a href="https://twitter.com/SBootstrap" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a> -->
-                                <div class="choose_file">
-                                  <span>Choose File</span>
-                                  <input name="Select File" type="file" />
-                                </div>
+                                <!-- <div class="choose_file"> -->
+                                <!--   <span>Choose File</span> -->
+                                <!--   <input name="Select File" type="file" /> -->
+                                <!-- </div> -->
+				
+				<form action="upload" method="post" enctype="multipart/form-data">
+				  <input type="file" name="file"><br /><br />
+				  <input type="submit" value="Upload">
+				</form>
+
                             </li>
                         </ul>
                         {% endblock %}
