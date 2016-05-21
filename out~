@@ -1,0 +1,2 @@
+Send request
+[{"faceRectangle":{"height":229,"left":134,"top":205,"width":229},"scores":{"anger":4.924714E-08,"contempt":3.77880951E-06,"disgust":4.596366E-08,"fear":2.07797141E-10,"happiness":0.997452736,"neutral":0.00254107849,"sadness":1.303294E-06,"surprise":1.0007044E-06}}]
