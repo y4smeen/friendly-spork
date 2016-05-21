@@ -60,7 +60,8 @@ from ast import literal_eval
 
 def printData( data ):
     r = json.loads(data)
-    print r[0]["scores"]
+    l = r[0]["scores"]
+    return max(l, key=lambda i: l[i])
 
-printData(ret)
+print printData(ret)
 
