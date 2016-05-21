@@ -7,7 +7,7 @@
 
 # To use this notebook, you will need to get keys to <b>Emotion API</b>. Visit <a href="http://www.projectoxford.ai/emotion">www.projectoxford.ai/emotion</a>, and then the “Try for free” button. On the “Sign in” page, use your Microsoft account to sign in and you will be able to subscribe to Emotion API and get free keys (Code of Conduct and TOS). After completing the sign-up process, paste your key into the variables section below. (Either the primary or the secondary key works.)
 
-# In[1]:
+# In[17]:
 
 import time 
 import requests
@@ -21,18 +21,23 @@ get_ipython().magic(u'matplotlib inline')
 # Display images within Jupyter
 
 
-# In[ ]:
+# In[18]:
 
 # Variables
 
 _url = 'https://api.projectoxford.ai/emotion/v1.0/recognize'
-_key = None #Here you have to paste your primary key
+_key = "465712c1599e451296c9cd3bf720295e"
 _maxNumRetries = 10
+
+
+# In[ ]:
+
+
 
 
 # ## Helper functions
 
-# In[ ]:
+# In[19]:
 
 def processRequest( json, data, headers ):
 
@@ -82,7 +87,7 @@ def processRequest( json, data, headers ):
     return result
 
 
-# In[ ]:
+# In[20]:
 
 def renderResultOnImage( result, img ):
     
@@ -106,7 +111,7 @@ def renderResultOnImage( result, img ):
 
 # ## Detect faces from an image retrieved via URL
 
-# In[ ]:
+# In[21]:
 
 # URL direction to image
 urlImage = 'https://raw.githubusercontent.com/Microsoft/ProjectOxford-ClientSDK/master/Face/Windows/Data/detection3.jpg'
@@ -132,7 +137,7 @@ ax.imshow( img )
 
 # # Detect faces from an image stored on disk
 
-# In[ ]:
+# In[22]:
 
 # Load raw image file into memory
 pathToFileInDisk = r'D:\tmp\detection3.jpg'
@@ -155,4 +160,24 @@ renderResultOnImage( result, img )
 
 ig, ax = plt.subplots(figsize=(15, 20))
 ax.imshow( img )
+
+
+# In[ ]:
+
+
+
+
+# In[ ]:
+
+
+
+
+# In[ ]:
+
+
+
+
+# In[ ]:
+
+
 

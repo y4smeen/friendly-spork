@@ -1,13 +1,35 @@
+import numpy as np
+import cv2
+
+# Load an image
+#img = cv2.imread('picture.jpg')
+#print img
+
+with open('picture.jpg', 'rb') as f:
+    data = f.read()
+#print data
+img=data
+with open('picture_out.jpg', 'wb') as f:
+    f.write(data)
+
+
+
+
+
 import httplib, urllib, base64  
+
+URL = 'http://grandmahenke.com/grandma/wp-content/uploads/2007/08/happy-anna.jpg'
 
 # Image to analyse (body of the request)
 
-body = {'url': 'http://grandmahenke.com/grandma/wp-content/uploads/2007/08/happy-anna.jpg'}
+#body = {'url': URL}
+body = img
 
 # API request for Emotion Detection
 
 headers = {
-   'Content-type': 'application/json',
+   #'Content-type': 'application/json',
+   'Content-type': 'application/octet-stream',
 }
 
 params = urllib.urlencode({
