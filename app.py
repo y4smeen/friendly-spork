@@ -66,9 +66,7 @@ def index():
 
 @app.route('/results')
 def results():
-    #return spotify.getLink()
-    #results = "<button href='" + spotify.getLink() + "' >Go to your playlist</button>"
-    results = "hello"
+    results = spotify.getLink()
     return render_template('results.html', results = results)
 
 
