@@ -74,6 +74,6 @@ from ast import literal_eval
 request = urllib2.urlopen(endpoint)
 result = request.read()
 r = json.loads(result)
-print r
-
+#print r
+print r["playlists"]["items"][0]["external_urls"]["spotify"]
 
