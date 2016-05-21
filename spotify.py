@@ -3,7 +3,7 @@ from flask import Flask, render_template, request, jsonify
 from ast import literal_eval
 import httplib, urllib, base64  
 import numpy as np
-import cv2
+
 
 def primaryEmotion( data ):
     r = json.loads(data)
