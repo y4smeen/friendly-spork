@@ -8,7 +8,9 @@ import numpy as np
 def primaryEmotion( data ):
     r = json.loads(data)
     l = r[0]["scores"]
-    return max(l, key=lambda i: l[i])
+    print l
+    return max(l)
+    #return max(l, key=lambda i: l[i])
 
 def getLink():
     # Load an image
@@ -66,9 +68,7 @@ def getLink():
 
     emotion = primaryEmotion(data) #CHANGE THE EMOTION HERE
 
-    print "hello2"
     print "EMOTION: "+emotion
-    print "hello1"
     endpoint = "https://api.spotify.com/v1/search?q="+emotion+"&type=track"
 
     request = urllib2.urlopen(endpoint)
