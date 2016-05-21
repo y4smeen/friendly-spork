@@ -47,9 +47,9 @@ def upload():
         file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
         # Redirect the user to the uploaded_file route, which
         # will basicaly show on the browser the uploaded file
-        #return redirect(url_for('uploaded_file',
-        #                        filename=filename))
-        return redirect(url_for('results'))
+        return redirect(url_for('uploaded_file',
+                                filename=filename))
+        #return redirect(url_for('results'))
 
 # This route is expecting a parameter containing the name
 # of a file. Then it will locate that file on the upload
@@ -67,8 +67,8 @@ def index():
 
 @app.route('/results')
 def results():
-    results = spotify.getLink()
-    return render_template('results.html', results = results)
+    # results = spotify.getLink()
+    return render_template('results.html', results = spotify.getLink())
 
 
 if __name__ == '__main__':

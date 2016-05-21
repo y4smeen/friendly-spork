@@ -1,7 +1,7 @@
 import urllib2, time, json
 from flask import Flask, render_template, request, jsonify
 from ast import literal_eval
-import httplib, urllib, base64  
+import httplib, urllib, base64
 import numpy as np
 
 
@@ -9,7 +9,7 @@ def primaryEmotion( data ):
     r = json.loads(data)
     l = r[0]["scores"]
     return max(l, key=lambda i: l[i])
-    
+
 def getLink():
     # Load an image
     #img = cv2.imread('picture.jpg')
@@ -77,4 +77,3 @@ def getLink():
     #print r
     print r["tracks"]["items"][0]["external_urls"]["spotify"]
     return r["tracks"]["items"][0]["external_urls"]["spotify"]
-
