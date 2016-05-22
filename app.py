@@ -68,7 +68,7 @@ def index():
 @app.route('/results')
 def results():
     # results = spotify.getLink()
-    return render_template('results.html', results = spotify.getLink())
+    return render_template('results.html', results = spotify.getLink(), emotion = spotify.getEmotion())
 
 
 if __name__ == '__main__':
