@@ -8,8 +8,26 @@ import numpy as np
 def primaryEmotion( data ):
     r = json.loads(data)
     l = r[0]["scores"]
-    print l
-    return max(l)
+    # print "list: " + str(l)
+    keys = l.keys()
+    # print 'unicode keys: ' + str(keys)
+    # [x.encode('UTF8') for x in keys]
+    keys = map(str, keys)
+    # print 'string keys: ' + str(keys)
+    # count = 0
+    # for i in keys:
+    #     keys[count] = str(i)
+    #     count += 1
+    # print "emotions: " + keys
+    values = l.values()
+    print "values: " + str(values)
+    print "max value: " + str(max(values))
+    print "index: " + str(values.index(max(values)))
+    print "emotion: " + keys[values.index(max(values))]
+    emotion = keys[values.index(max(values))]
+    # print type(new_list[0])
+    # return keys.index(max(values))
+    return emotion
     #return max(l, key=lambda i: l[i])
 
 def getLink():
