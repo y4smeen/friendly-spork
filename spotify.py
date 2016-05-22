@@ -87,11 +87,11 @@ def getLink():
     emotion = primaryEmotion(data) #CHANGE THE EMOTION HERE
 
     print "EMOTION: "+emotion
-    endpoint = "https://api.spotify.com/v1/search?q="+emotion+"&type=track"
+    endpoint = "https://api.spotify.com/v1/search?q="+emotion+"&type=playlist"
 
     request = urllib2.urlopen(endpoint)
     result = request.read()
     r = json.loads(result)
     #print r
-    print r["tracks"]["items"][0]["external_urls"]["spotify"]
-    return r["tracks"]["items"][0]["external_urls"]["spotify"]
+    print r["playlists"]["items"][0]["external_urls"]["spotify"]
+    return r["playlists"]["items"][0]["external_urls"]["spotify"]
